@@ -1,7 +1,7 @@
-# 2019 ARFC Group Summary Presentation
+# 2019 DDCA Presentation at the DOE SA\&I Campaign Meeting
 
 This presentation will provide an update regarding research activities in the 
-ARFC group. It will be presented at 4:00pm, September 5, 2019. 
+DDCA projects. 
 
 Use the makefile to build it. 
 
