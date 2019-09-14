@@ -1,4 +1,36 @@
 \begin{frame}
+  \frametitle{Goal of the Project}
+  % a comment
+  \begin{itemize}
+      \item[$\bullet$] The primary goal of the project was to upgrade the Cyclus Fuel Cycle
+                       Simulator to include the capability to automatically deploy fuel
+                       cycle facilities for the user.
+      \item[$\bullet$] This functionality would be added to a Cyclus Institution class agent.
+      \item[$\bullet$] The automated deployment would be managed using time series algorithms
+                       to predict the value of future timesteps based on previous data.
+   \end{itemize}        
+\end{frame}
+
+\begin{frame}
+  \frametitle{Goal of the Project}
+  % a comment
+  \begin{itemize}
+    \item[$\bullet$] Three types of methods were looked at for doing the prediction.
+    \item[$\bullet$] Non-optimizing methods. These methods included moving average
+                     , autoregressive moving average (ARMA), and autoregressive
+                     heteroskidasticity (ARCH) models. 
+    \item[$\bullet$] Deterministic models. These models use a methodology that will
+                     always return the same answer given a unique input. This includes
+                     Fast Fourier Transforms, Exponential Smoothing, Holt-Winters,
+                     Polynomial regression. 
+    \item[$\bullet$] Stochastic models. With stochastic models, the output is based
+                     on randomly sampling models to determine the behavior of the 
+                     next time step. The method implimented here is a machine learning
+                     seasonal method. 
+   \end{itemize}        
+\end{frame}
+
+\begin{frame}
   \frametitle{Why Automate Fuel Cycle Deployment?}
   % a comment
   \begin{itemize}
