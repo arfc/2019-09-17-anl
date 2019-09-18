@@ -10,7 +10,8 @@
 %\subtitle[short subtitle]{long subtitle}
 \subtitle[DE-10512]{FY16 NEUP Award Summary}
 %\author[short name]{long name}
-\author[ARFC]{\textbf{Kathryn Huff}\\Robert Flanagan, Gwendolyn Chee, Roberto Fairhurst, 
+\author[ARFC]{\textbf{Kathryn Huff}\\
+Gwendolyn Chee, Roberto Fairhurst, Robert Flanagan, 
 Jin Whan Bae, Anthony Scopatz, Travis Knight}
 %\date[short date]{long date}
 \date[09.17.2019]{September 17, 2019}
@@ -28,13 +29,52 @@ Jin Whan Bae, Anthony Scopatz, Travis Knight}
 \usepackage{bigints}
 \usepackage{minted}
 
+
+
+\newcommand{\Cyclus}{\textsc{Cyclus}\xspace}%
+\newcommand{\Cycamore}{\textsc{Cycamore}\xspace}%
+\newcommand{\deploy}{\texttt{d3ploy}\xspace}%
 \newcommand{\units}[1] {\:\text{#1}}%
 \newcommand{\SN}{S$_N$}%{S$_\text{N}$}%{$S_N$}%
 \DeclareMathOperator{\erf}{erf}
-%I need some complimentary error funcitons... 
+%I need some complimentary error funcitons...
 \DeclareMathOperator{\erfc}{erfc}
+%page numbers
+\setbeamertemplate{footline}[page number]
+\setbeamertemplate{caption}[numbered]
 %Those icons in the references are terrible looking
 \setbeamertemplate{bibliography item}[text]
+
+%Gwen Tikz additions
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows, decorations, shapes}
+
+\usetikzlibrary{shapes.geometric,arrows}
+\tikzstyle{process} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=blue!30]
+\tikzstyle{object} = [ellipse, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\definecolor{illiniblue}{HTML}{B1C6E2}
+\definecolor{illiniorange}{HTML}{f8c2a2}
+\usetikzlibrary{shapes.geometric, arrows}
+\tikzstyle{oblock} = [rectangle, draw, fill=illiniorange,
+text width=15em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{bblock} = [rectangle, draw, fill=illiniblue,
+text width=15em, text centered, rounded corners, minimum height=4em]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+\usepackage{tabularx}
+\newcolumntype{b}{>{\hsize=1.0\hsize}X}
+\newcolumntype{s}{>{\hsize=.5\hsize}X}
+\newcolumntype{m}{>{\hsize=.75\hsize}X}
+\newcolumntype{x}{>{\hsize=.25\hsize}X}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\def\arraystretch{1}
+%%%% Acronym support
+\usepackage{multirow}
+\usepackage{graphicx,subfigure}
+
 
 %%%% Acronym support
 
@@ -61,6 +101,7 @@ Jin Whan Bae, Anthony Scopatz, Travis Knight}
   \vskip0pt%
 }
 \makeatletter
+
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% From uw-beamer Here's a handy bit of code to place at 
@@ -92,21 +133,31 @@ Jin Whan Bae, Anthony Scopatz, Travis Knight}
 \end{frame}
 }
 
-\section{Team}
-\input{team} % Katy will add a slide about the team & timeline
-\section{Motivation}
-\input{cyclus} % Background about cyclus. These slides exist somewhere.
-\input{motivation} % Robert: 
-% Please summarize the challenge, 
-% proposal, 
+\section{Overview}
+\subsection{Motivation}
+\input{motivation}
+% key challenge
 % funded milestones
-\section{Approach}
-\input{approach} % Robert: Please add slides regarding the method.
-\section{Accomplishments}
-\input{accomplishments}
+\subsection{Objectives}
+\input{objectives}
 
-% Acknowledgements
+\section{Accomplishments}
+\subsection{GIS Capability}
+\input{gis}
+\input{transitions}
+\subsection{\deploy} 
+\input{deploy}
+\input{breakdown}
+\subsection{Comparison of Prediction Methods}
+\input{compare_prediction}
+\input{sa}
+\input{best}
+\section{Conclusion}
+\subsection{Conclusion}
+\input{conclusion}
+\subsection{Auxilliary Activities}
 \input{acks}
+
 
 %%--------------------------------%%
 %%          Bibliography          %%
@@ -122,7 +173,6 @@ Jin Whan Bae, Anthony Scopatz, Travis Knight}
 % Examples 
 % Robert: Some good examples of how to use beamer are in the example file.
 % You can use this to guide the preparation of slides.
-\input{example}
 
 
 \end{document}
