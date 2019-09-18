@@ -26,7 +26,7 @@
         \begin{block}{Publications Affiliated with this Work}
                 \begin{itemize}
                   \setlength{\itemindent}{3cm}
-                        \item[\textbf{Journal Articles}] 3 (1 upcoming)
+                        \item[\textbf{Journal Articles}] 3 (2 upcoming)
                         \item[\textbf{Full Conference Papers}] 3 (2 upcoming) 
                         \item[\textbf{Conference Summaries}] 7
                         \item[\textbf{Technical Reports}] 2 (1 upcoming)
@@ -50,10 +50,32 @@
 \end{frame}
 
 \begin{frame}
+  \frametitle{Motivation}
+  % a comment
+        \begin{block}{Main Objective}
+              To improve usability of Cyclus for transition scenarios.
+        \end{block}
+        
+
+        \begin{block}{Main Challenge}
+              Deploying reactors to meet power demand is trivial, and existed 
+                in the earliest versions of Cyclus.
+              \textbf{Automated, predictive deployment and decommissioning of 
+                other facilities is more complex.} These include mining, 
+                milling, enrichment, fuel 
+                fabrication, reprocessing, and others. 
+
+              For example, a balanced closed fuel cycle may require ensuring 
+                that there is enough fast reactor fuel for their operation and 
+                may drive deployment of a fleet of light water reactors.
+        \end{block}
+\end{frame}
+
+\begin{frame}
         \frametitle{Quick Statistics}
     \begin{figure}[htbp!]
         \begin{center}
-          \includegraphics[width=0.8\textwidth]{images/git-stats-issues-ddca.png}
+          \includegraphics[width=0.9\textwidth]{images/git-stats-issues-ddca.png}
         \end{center}
               \caption{GitHub issues associated directly with this work.}
       \end{figure}
@@ -64,7 +86,7 @@
         \frametitle{Quick Statistics}
     \begin{figure}[htbp!]
         \begin{center}
-          \includegraphics[width=0.8\textwidth]{images/git-stats-commits-ddca.png}
+          \includegraphics[width=0.9\textwidth]{images/git-stats-commits-ddca.png}
         \end{center}
               \caption{GitHub commits associated directly with this work.}
       \end{figure}
@@ -75,7 +97,7 @@
         \frametitle{Quick Statistics}
     \begin{figure}[htbp!]
         \begin{center}
-          \includegraphics[width=0.8\textwidth]{images/git-stats-lines-ddca.png}
+          \includegraphics[width=\textwidth]{images/git-stats-lines-ddca.png}
         \end{center}
               \caption{Lines of code associated directly with this work.}
       \end{figure}
@@ -121,80 +143,12 @@
 
 
 \begin{frame}
-  \frametitle{Goal of the Project}
-  % a comment
-        \begin{block}{Main Objective}
-              To improve usability of Cyclus for transition scenarios.
-        \end{block}
-        
-
-        \begin{block}{Main Challenge}
-              Deploying reactors to meet power demand is trivial, and existed 
-                in the earliest versions of Cyclus.
-              \textbf{Automated, predictive deployment and decommissioning of 
-                other facilities is more complex.} These include mining, 
-                milling, enrichment, fuel 
-                fabrication, reprocessing, and others. 
-
-              For example, a balanced closed fuel cycle may require ensuring 
-                that there is enough fast reactor fuel for their operation and 
-                may drive deployment of a fleet of light water reactors.
-        \end{block}
+        \frametitle{Detailed Schedule}
+    \begin{figure}[htbp!]
+        \begin{center}
+          \includegraphics[width=\textwidth]{images/github-ddca-proj.png}
+        \end{center}
+              \caption{Project management associated with this project.}
+      \end{figure}
 \end{frame}
 
-\begin{frame}
-        \frametitle{Method}
-        \begin{block}{Because Cyclus is Agent-Based}
-                \begin{itemize}
-                        \item Its regions and institutions have the agency to dynamically make and alter deployment decisions.
-                        \item Each agent can make their own predictions of the future based on current and past performance of the simulation.
-                \end{itemize} 
-                
-                We embedded advanced time series prediction algorithms to automatically 
-                deploy fuel cycle facilities for the user. This was implemented 
-                in \textbf{\texttt{d3ploy}}, an Institution agent. 
-        \end{block}
-\end{frame}
-
-%\begin{frame}
-%  \frametitle{Goal of the Project}
-%  % a comment
-%  \begin{itemize}
-%    \item[$\bullet$] Three types of methods were looked at for doing the prediction.
-%    \item[$\bullet$] Non-optimizing methods. These methods included moving average
-%                     , autoregressive moving average (ARMA), and autoregressive
-%                     heteroskidasticity (ARCH) models. 
-%    \item[$\bullet$] Deterministic models. These models use a methodology that will
-%                     always return the same answer given a unique input. This includes
-%                     Fast Fourier Transforms, Exponential Smoothing, Holt-Winters,
-%                     Polynomial regression. 
-%    \item[$\bullet$] Stochastic models. With stochastic models, the output is based
-%                     on randomly sampling models to determine the behavior of the 
-%                     next time step. The method implimented here is a machine learning
-%                     seasonal method. 
-%   \end{itemize}        
-%\end{frame}
-%
-
-  \begin{frame}
-    \frametitle{Motivation}
-
-    \textbf{Gap in capability: User must define when support facilities are deployed}
-
-    \begin{figure}[htbp!]
-      \begin{center}
-        \includegraphics[width=0.8\textwidth]{images/user-deploy}
-      \end{center}
-            \caption{User defined Deployment Scheme }
-    \end{figure}
-
-    \textbf{Bridging the gap: Developed demand-driven deployment capability in \Cyclus. This capability is named \deploy.}
-
-    \begin{figure}[htbp!]
-      \begin{center}
-        \includegraphics[width=0.8\textwidth]{images/auto-deploy}
-      \end{center}
-            \caption{Demand Driven Deployment Scheme}
-    \end{figure}
-
-  \end{frame}
